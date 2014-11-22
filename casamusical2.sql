@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 15-11-2014 a las 22:03:57
+-- Tiempo de generación: 22-11-2014 a las 02:09:19
 -- Versión del servidor: 5.6.17
 -- Versión de PHP: 5.5.12
 
@@ -36,15 +36,7 @@ CREATE TABLE IF NOT EXISTS `carrito` (
   `Precio` double NOT NULL,
   `Total` double NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
-
---
--- Volcado de datos para la tabla `carrito`
---
-
-INSERT INTO `carrito` (`Id`, `Cedula`, `Codp`, `Nombre`, `Tipo`, `Cantidad`, `Precio`, `Total`) VALUES
-(9, '10239201123', '223322', 'Acordeonado', 'Percusion', 1, 230000, 230000),
-(10, '2039102939', '330294', 'Guitarra', 'Cuerda', 1, 300000, 300000);
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=37 ;
 
 -- --------------------------------------------------------
 
@@ -68,8 +60,14 @@ CREATE TABLE IF NOT EXISTS `producto` (
 --
 
 INSERT INTO `producto` (`codp`, `precio`, `cantidad`, `nombre`, `tipo`, `Ruta_img`, `Descripcion`) VALUES
+('2019283', 290000, 1, 'Guitarra electrica', 'Cuerda', 'C:/wamp/www/Sistemas_2/productos/Cuerda/2019283.png', 'Guitarra muyh ruidosa para rock and roll'),
+('201929', 450000, 25, 'Teclado', 'Teclado', 'C:/wamp/www/Sistemas_2/productos/Teclado/201929.png', 'Teclado usado para los grandes conciertos de piano'),
+('2029302', 340000, 12, 'Violin', 'Percusion', 'C:/wamp/www/Sistemas_2/productos/Percusion/2029302.png', 'Violin'),
+('2203928', 1350000, 5, 'Piano de cola', 'Teclado', 'C:/wamp/www/Sistemas_2/productos/Teclado/2203928.png', 'Piano usado para grandes conciertos'),
+('22201932', 55000, 21, 'Flautin', 'Viento', 'C:/wamp/www/Sistemas_2/productos/Viento/22201932.png', 'Flautin pequeño'),
+('22203992', 200000, 24, 'Flauta', 'Viento', 'C:/wamp/www/Sistemas_2/productos/Viento/22203992.png', 'Flauta'),
 ('223322', 235000, 22, 'Acordeonado', 'Percusion', 'C:/wamp/www/Sistemas_2/productos/Percusion/223322.png', 'acordeon'),
-('330294', 300000, 29, 'Guitarra', 'Cuerda', 'C:/wamp/www/Sistemas_2/productos/Cuerda/330294.png', 'sdd');
+('330294', 300000, 27, 'Guitarra', 'Cuerda', 'C:/wamp/www/Sistemas_2/productos/Cuerda/330294.png', 'sdd');
 
 -- --------------------------------------------------------
 

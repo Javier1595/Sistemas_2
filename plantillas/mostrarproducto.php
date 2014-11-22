@@ -38,7 +38,7 @@
 							</div>
 							<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
 								<?php echo $producto['Descripcion']; ?>
-								<h4><b>Precio: </b><?php echo $producto['precio']; ?></h4>
+								<h4><b>Precio: $</b><?php echo $producto['precio']; ?></h4>
 								<h4><b>Referencia: </b><?php echo $producto['codp']; ?></h4>
 								<h4><b>Cantidad: </b><?php echo $producto['cantidad']; ?></h4>
 							</div>

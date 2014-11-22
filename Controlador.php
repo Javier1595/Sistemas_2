@@ -102,6 +102,17 @@
 		}
 		require "plantillas/mostrarproducto.php";
 	}
+	function eliminar_carrito_action($id){
+		$ced=$_SESSION["Cedula"];
+		$carrito = mostrarcarrito($id);
+		$a=eliminar_carrito($ced,$carrito);
+		if ($a==1) {
+			$string="Producto eliminado";
+		}else{
+			$string="No se logro eliminar del carrito";
+		}
+		header("/Sistemas_2/Index.php/mostrarcarrito");
+	}
 	function mostrar_carrito_action(){
 		$carrito=mostrarcarrito();
 		require "plantillas/listarcarrito.php";

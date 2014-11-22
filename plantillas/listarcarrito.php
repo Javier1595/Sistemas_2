@@ -45,11 +45,12 @@
 									<td><h5><b>$</b><?php echo $carrito["Total"]; ?></h5></td>
 								</tr>
 							</table>
+							<center><a class='btn btn-primary' href='/Sistemas_2/Index.php/eliminar_carrito?id=<?php echo $carrito["Codp"];?>'><span class='glyphicon glyphicon-remove'> Eliminar</span></a></center>
 						</div>
 					</div>
 					<?php $total=$total+$carrito["Total"]; ?>
 				<?php endforeach ?>
-				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8"></div><div class="col-xs-4 col-sm-4 col-md-4 col-lg-4"><h4 align="right"><b>Total pedido:</b> <b>$</b><?php echo "".$total; ?> </h4></div>
+				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12"><h4 align="right"><b>Total pedido:</b> <b>$</b><?php echo "".$total; ?> </h4></div>
 			</div>
 		</div>
 	</div>

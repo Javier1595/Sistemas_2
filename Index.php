@@ -158,6 +158,13 @@ switch ($uri[0]) {
 			carrito_action($id);
 		}
 	break;
+	case "/Sistemas_2/Index.php/eliminar_carrito":
+		if(isset($_GET["id"])){
+			$string="";
+			$id=$_GET['id'];
+			eliminar_carrito_action($id);
+		}
+	break;
 	case "/Sistemas_2/Index.php/mostrarcarrito":
 		mostrar_carrito_action();
 	break;

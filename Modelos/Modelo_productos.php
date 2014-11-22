@@ -78,6 +78,22 @@
 			}
 		cerrar_conexion_base_de_datos($conexion);
 	}
+	function sumarproducto($Codigo){
+		$string="";
+		$producto=mostrarproducto($Codigo);
+		foreach ($producto as $producto) {
+			if ($producto["codp"]==$Codigo) {
+				$cant=$producto["cantidad"];
+			}
+		}
+		$Cantidad=$cant+1;
+		$conexion = conectar_base_de_datos();
+			$actualizar="UPDATE producto SET  Cantidad = '$Cantidad' WHERE codp= '$Codigo';";
+			if (!mysqli_query($conexion,$actualizar)) {
+				 $string="".mysqli_error($conexion);
+			}
+		cerrar_conexion_base_de_datos($conexion);
+	}
 	function eliminarproducto($id){
 		$string="";
 		$conexion = conectar_base_de_datos();
@@ -122,6 +138,27 @@
 					restarproducto($cod);
 					$a=1;
 				}
+		}
+		return $a;
+		cerrar_conexion_base_de_datos($conexion);
+	}
+	function eliminar_carrito($ced,$carrito){
+		$conexion = conectar_base_de_datos();
+		$a=0;
+		foreach($carrito as $carrito) {
+			$cod=$carrito["Codp"];
+			$prod_carrito=consultar_producto_carrito($cod);
+			if ($prod_carrito==1) {
+				$eliminar="DELETE FROM carrito WHERE Codp='$cod' and Cedula='$ced';";
+					if (!mysqli_query($conexion,$eliminar)) {
+						 $a=0;
+					}else{
+						sumarproducto($cod);
+						$a=1;
+					}
+			}else{
+				 $a=0;
+			}
 		}
 		return $a;
 		cerrar_conexion_base_de_datos($conexion);
